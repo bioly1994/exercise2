@@ -1,10 +1,17 @@
 package wdsr.exercise2.startthread;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class BusinessServiceWithExecutor {
-	private NumericHelper helper;
 	
+	private NumericHelper helper;
+	private ExecutorService executor ;
+	
+
 	public BusinessServiceWithExecutor(NumericHelper helper) {
 		this.helper = helper;
+		executor = Executors.newSingleThreadExecutor();
+		
 	}
 
 	/**
